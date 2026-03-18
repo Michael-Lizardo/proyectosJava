@@ -119,6 +119,11 @@ public class Registro extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setText("Carrera:");
 
+        Matricula_estudiante.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+
+        Carrera_estudiante.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+
+        Nombre_estudiante.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         Nombre_estudiante.addActionListener(this::Nombre_estudianteActionPerformed);
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
@@ -192,6 +197,11 @@ public class Registro extends javax.swing.JFrame {
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setText("Resultado:");
 
+        txt_resultado.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        txt_resultado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        txt_calificacionFinal.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -212,7 +222,7 @@ public class Registro extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(Nota_asignaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 344, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel7)
                             .addComponent(Nota_examenFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -314,7 +324,7 @@ public class Registro extends javax.swing.JFrame {
                         .addGroup(Panel_DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Matricula_estudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Carrera_estudiante, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 83, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -354,17 +364,25 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_Nota_PracticasActionPerformed
 
     private void boton_ResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ResultadoActionPerformed
-        calcularCalificacion();
-        double calificacion = calcularCalificacion();
+         if (Nota_parcial.getText().isEmpty() || 
+        Nota_Practicas.getText().isEmpty() ||
+        Nota_asignaciones.getText().isEmpty() || 
+        Nota_examenFinal.getText().isEmpty()) {
+        
+        javax.swing.JOptionPane.showMessageDialog(this, "Ingresa solo números en las notas.");
+        
+    } else {
+        calificacion = calcularCalificacion();
         txt_calificacionFinal.setText(String.valueOf(calificacion));
         
-        if(calificacion >= 60){
-            txt_resultado.setText("Aprobado");
-        }
-        else{
-            txt_resultado.setText("Reprobado"); 
-            
-        }
+        if (calificacion >= 60) {
+    txt_resultado.setText("Aprobado");
+    txt_resultado.setForeground(java.awt.Color.GREEN);
+} else {
+    txt_resultado.setText("Reprobado");
+    txt_resultado.setForeground(java.awt.Color.RED);
+}
+    }
     }//GEN-LAST:event_boton_ResultadoActionPerformed
 
     /**
