@@ -364,25 +364,24 @@ public class Registro extends javax.swing.JFrame {
     }//GEN-LAST:event_Nota_PracticasActionPerformed
 
     private void boton_ResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ResultadoActionPerformed
-         if (Nota_parcial.getText().isEmpty() || 
-        Nota_Practicas.getText().isEmpty() ||
-        Nota_asignaciones.getText().isEmpty() || 
-        Nota_examenFinal.getText().isEmpty()) {
-        
-        javax.swing.JOptionPane.showMessageDialog(this, "Ingresa solo números en las notas.");
-        
+    try {
+    calificacion = calcularCalificacion();
+    txt_calificacionFinal.setText(String.valueOf(calificacion));
+
+    if (calificacion >= 60) {
+        txt_resultado.setText("Aprobado");
+        txt_resultado.setForeground(java.awt.Color.GREEN);
     } else {
-        calificacion = calcularCalificacion();
-        txt_calificacionFinal.setText(String.valueOf(calificacion));
-        
-        if (calificacion >= 60) {
-    txt_resultado.setText("Aprobado");
-    txt_resultado.setForeground(java.awt.Color.GREEN);
-} else {
-    txt_resultado.setText("Reprobado");
-    txt_resultado.setForeground(java.awt.Color.RED);
-}
+        txt_resultado.setText("Reprobado");
+        txt_resultado.setForeground(java.awt.Color.RED);
     }
+
+} catch (NumberFormatException e) {
+    javax.swing.JOptionPane.showMessageDialog(this,
+        "Por favor ingresa solo números en las notas.",
+        "Error",
+        javax.swing.JOptionPane.ERROR_MESSAGE);
+}
     }//GEN-LAST:event_boton_ResultadoActionPerformed
 
     /**
