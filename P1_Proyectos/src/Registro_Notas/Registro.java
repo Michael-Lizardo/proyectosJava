@@ -349,7 +349,7 @@ public class Registro extends javax.swing.JFrame {
     private void Nombre_estudianteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nombre_estudianteActionPerformed
         
     }//GEN-LAST:event_Nombre_estudianteActionPerformed
-    
+    //Este metodo es el que calcula las suma de las notas
     private double calcularCalificacion() {
     notaParcial      = Double.parseDouble(Nota_parcial.getText());
     notaPracticas    = Double.parseDouble(Nota_Practicas.getText());
@@ -362,12 +362,13 @@ public class Registro extends javax.swing.JFrame {
     private void Nota_PracticasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nota_PracticasActionPerformed
         
     }//GEN-LAST:event_Nota_PracticasActionPerformed
-
+    //Este es el boton que calcula el resultado de tus calificacionesm, te dice si estas aprobado o reprobado, y valida que no sean letras
     private void boton_ResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_ResultadoActionPerformed
     try {
     calificacion = calcularCalificacion();
     txt_calificacionFinal.setText(String.valueOf(calificacion));
-
+    
+    
     if (calificacion >= 60) {
         txt_resultado.setText("Aprobado");
         txt_resultado.setForeground(java.awt.Color.GREEN);
