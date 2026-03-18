@@ -53,7 +53,7 @@ public class Factura {
         System.out.println();
         System.out.println("DATOS DEL CLIENTE:");
         System.out.println("  Nombre: " + cliente.getNombre());
-        System.out.println("  Teléfono: " + cliente.getNumeroTelefonico());
+        System.out.println("  Telefono: " + cliente.getNumeroTelefonico());
         System.out.println();
 
         Plan plan = cliente.getPlan();
