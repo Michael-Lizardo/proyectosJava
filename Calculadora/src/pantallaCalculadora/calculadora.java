@@ -40,6 +40,8 @@ public class calculadora extends javax.swing.JFrame {
         botonMulti = new javax.swing.JButton();
         botonDivi = new javax.swing.JButton();
         botonDelete = new javax.swing.JButton();
+        botonRaiz = new javax.swing.JButton();
+        botonCuadrado = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtResultado = new javax.swing.JTextField();
@@ -96,6 +98,16 @@ public class calculadora extends javax.swing.JFrame {
         botonDelete.setMinimumSize(new java.awt.Dimension(63, 63));
         botonDelete.addActionListener(this::botonDeleteActionPerformed);
 
+        botonRaiz.setBackground(new java.awt.Color(153, 0, 0));
+        botonRaiz.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        botonRaiz.setText("√");
+        botonRaiz.addActionListener(this::botonRaizActionPerformed);
+
+        botonCuadrado.setBackground(new java.awt.Color(153, 0, 0));
+        botonCuadrado.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        botonCuadrado.setText("x²");
+        botonCuadrado.addActionListener(this::botonCuadradoActionPerformed);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -103,11 +115,14 @@ public class calculadora extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(39, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(botonRestar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonSumar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonMulti, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonDivi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
+                    .addComponent(botonCuadrado, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(botonRaiz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonRestar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonSumar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonMulti, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonDivi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(botonDelete, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE)))
                 .addGap(69, 69, 69))
         );
         jPanel3Layout.setVerticalGroup(
@@ -123,6 +138,10 @@ public class calculadora extends javax.swing.JFrame {
                 .addComponent(botonDivi)
                 .addGap(47, 47, 47)
                 .addComponent(botonDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(botonRaiz, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addComponent(botonCuadrado, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -204,9 +223,9 @@ public class calculadora extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botonConver, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+                .addGap(20, 20, 20))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -269,6 +288,19 @@ public class calculadora extends javax.swing.JFrame {
         botonConver.setSelected(false);
     }//GEN-LAST:event_botonConverActionPerformed
 
+    private void botonRaizActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonRaizActionPerformed
+        double valor1 = Double.parseDouble(txtValor1.getText());
+    double resultado = Math.sqrt(valor1);
+    txtResultado.setText(String.valueOf(resultado));
+    }//GEN-LAST:event_botonRaizActionPerformed
+
+    private void botonCuadradoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonCuadradoActionPerformed
+      double valor1 = Double.parseDouble(txtValor1.getText());
+    double valor2 = Double.parseDouble(txtValor2.getText());
+    double resultado = Math.pow(valor1, valor2);
+    txtResultado.setText(String.valueOf(resultado));
+    }//GEN-LAST:event_botonCuadradoActionPerformed
+
      private double Sumar(){
       Double valor1 = Double.parseDouble(txtValor1.getText());  
       Double valor2 = Double.parseDouble(txtValor2.getText());  
@@ -327,9 +359,11 @@ public class calculadora extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton botonConver;
+    private javax.swing.JButton botonCuadrado;
     private javax.swing.JButton botonDelete;
     private javax.swing.JButton botonDivi;
     private javax.swing.JButton botonMulti;
+    private javax.swing.JButton botonRaiz;
     private javax.swing.JButton botonRestar;
     private javax.swing.JButton botonSumar;
     private javax.swing.JLabel jLabel1;
