@@ -18,6 +18,8 @@ public class Calculadora {
     public static void main(String[] args) {
         
         calculadora Calcu = new calculadora();  
+        Calcu.setVisible(true);
+        Calcu.setLocationRelativeTo(null);
     }
   
     
