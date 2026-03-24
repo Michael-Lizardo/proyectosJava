@@ -74,25 +74,43 @@ public class pantallaDatos extends javax.swing.JFrame {
         jLabel1.setText("Datos de Pacientes");
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Nombre:");
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Edad:");
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Sexo:");
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
         jLabel6.setText("Altura:");
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Peso Total:");
 
+        txtNombre.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        txtEdad.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         txtEdad.addActionListener(this::txtEdadActionPerformed);
 
+        txtSexo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        txtAltura.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        txtPeso.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        btnLimpiar.setBackground(new java.awt.Color(102, 0, 0));
+        btnLimpiar.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         btnLimpiar.setText("Limpiar");
         btnLimpiar.addActionListener(this::btnLimpiarActionPerformed);
 
+        btnGuardar.setBackground(new java.awt.Color(0, 102, 0));
+        btnGuardar.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         btnGuardar.setText("Guardar");
         btnGuardar.addActionListener(this::btnGuardarActionPerformed);
 
@@ -153,7 +171,7 @@ public class pantallaDatos extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 105, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGuardar, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -163,9 +181,11 @@ public class pantallaDatos extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 102));
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Enfermedades:");
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Alergias Alimentarias:");
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
@@ -173,16 +193,32 @@ public class pantallaDatos extends javax.swing.JFrame {
         jLabel11.setText("Informacion Paciente");
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Problemas Digestivos:");
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(0, 0, 0));
         jLabel13.setText("Medicamentos Act.:");
 
         jLabel14.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Actividad Fisica:");
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Objetivos del Paciente:");
+
+        txtEnfermedades.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        txtAlergias.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        txtDigestivos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        txtMedicamentos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        txtActividadFisica.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        txtObjetivos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jLabel2.setText("By Michael in Java");
 
