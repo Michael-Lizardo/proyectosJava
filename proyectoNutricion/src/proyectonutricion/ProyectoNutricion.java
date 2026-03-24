@@ -14,7 +14,10 @@ public class ProyectoNutricion {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Esto crea tu ventana y la muestra en pantalla
+    java.awt.EventQueue.invokeLater(() -> {
+        new pantallaDatos().setVisible(true);
+    });
     }
     
 }
