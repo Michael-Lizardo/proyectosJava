@@ -11,9 +11,9 @@ import javax.swing.JOptionPane;
  * @author Arialdys
  */
 public class pantallaDatos extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(pantallaDatos.class.getName());
-    
+
     /**
      * Creates new form pantallaDatos
      */
@@ -271,37 +271,42 @@ public class pantallaDatos extends javax.swing.JFrame {
     }//GEN-LAST:event_txtEdadActionPerformed
 
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
-        // TODO add your handling code here:
+        txtNombre.setText("");
+        txtEdad.setText("");
+        txtSexo.setText("");
+        txtAltura.setText("");
+        txtPeso.setText("");
+        txtEnfermedades.setText("");
+        txtAlergias.setText("");
+        txtDigestivos.setText("");
+        txtMedicamentos.setText("");
+        txtActividadFisica.setText("");
+        txtObjetivos.setText("");
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-      String nombre = txtNombre.getText();
-      int edad = Integer.parseInt(txtEdad.getText());
-      String sexo = txtSexo.getText();
-      double altura = Double.parseDouble(txtAltura.getText());
-      double peso = Double.parseDouble(txtPeso.getText());
-      String enfermedades = txtEnfermedades.getText();
-      String alergias = txtAlergias.getText();
-      String problemas_digestivos = txtDigestivos.getText();
-      String medicamentos = txtMedicamentos.getText();
-      String actividad_fisica = txtActividadFisica.getText();
-      String objetivo = txtObjetivos.getText();
-      
-      pacientes p = new pacientes(nombre, edad, sexo, altura, peso, enfermedades, alergias, problemas_digestivos , medicamentos, actividad_fisica, objetivo);
-      ConsultaPacientes modPac = new ConsultaPacientes();
+        String nombre = txtNombre.getText();
+        int edad = Integer.parseInt(txtEdad.getText());
+        String sexo = txtSexo.getText();
+        double altura = Double.parseDouble(txtAltura.getText());
+        double peso = Double.parseDouble(txtPeso.getText());
+        String enfermedades = txtEnfermedades.getText();
+        String alergias = txtAlergias.getText();
+        String problemas_digestivos = txtDigestivos.getText();
+        String medicamentos = txtMedicamentos.getText();
+        String actividad_fisica = txtActividadFisica.getText();
+        String objetivo = txtObjetivos.getText();
 
-    if (modPac.registrar(p)) {
-    JOptionPane.showMessageDialog(null, "¡Paciente guardado con éxito! ");
-    } else {
-    JOptionPane.showMessageDialog(null, "Error al guardar el paciente. ");
-    }
+        pacientes p = new pacientes(nombre, edad, sexo, altura, peso, enfermedades, alergias, problemas_digestivos, medicamentos, actividad_fisica, objetivo);
+        ConsultaPacientes modPac = new ConsultaPacientes();
+
+        if (modPac.registrar(p)) {
+            JOptionPane.showMessageDialog(null, "¡Paciente guardado con éxito! ");
+        } else {
+            JOptionPane.showMessageDialog(null, "Error al guardar el paciente. ");
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
-    
-    
-    
-    
-    
     /**
      * @param args the command line arguments
      */
